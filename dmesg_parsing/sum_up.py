@@ -6,7 +6,7 @@ import sys
 """
 sums up data for all indices
 """
-def sum_up(filepath):
+def sum_up(filepath,arg):
 	with open(filepath) as f:
 		sum = 0
 		hop = 0
@@ -36,6 +36,9 @@ def sum_up(filepath):
 				sum = 0
 		max_val = 0
 		max_idx = 0
+		if int(arg) == 1 :
+			for line in array:
+				print line
 		for idx,line in enumerate(array):
 			elems = line.split()
 			if max_val < int(elems[-1]):
@@ -47,4 +50,7 @@ def sum_up(filepath):
 
 
 if __name__ == "__main__":
-	sum_up(sys.argv[1])
+	if len(sys.argv) == 2 :
+		sum_up(sys.argv[1], 0 )
+	elif len(sys.argv) == 3 :
+		sum_up(sys.argv[1], sys.argv[2])
