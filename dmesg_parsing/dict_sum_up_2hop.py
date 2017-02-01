@@ -43,18 +43,15 @@ def sum_up(filepath,arg):
 		dict_map = dict()	
 		remote_accesses = 0
 		local_accesses = 0
-		twohop_remote_accesses = 0
 		for idx,line in enumerate(array):
 			elems = line.split()
-			if (str(elems[-5]) == '1') or (str(elems[-5]) == '2') :
+			if (str(elems[-5]) == '2') :
 				dest = str(elems[-2])
 				if dest.split('->')[1] in dict_map.keys():
 					dict_map[dest.split('->')[1]] += int(elems[-1])
 				else:
 					dict_map[dest.split('->')[1]] = int(elems[-1])
 				remote_accesses += int(elems[-1])
-				if str(elems[-5]) == '2' :
-					twohop_remote_accesses +=  int(elems[-1])
 			else :
 				local_accesses += int(elems[-1])
 
@@ -67,17 +64,11 @@ def sum_up(filepath,arg):
 			total_acc += v
 		for k in dict_map.keys():
 			dict_map_percentage[k] = float(dict_map[k]) / float(total_acc) * float(100)
-
-		if int(arg) == 1 :
-			for line in array:
-				elems = line.split()
-				if str(elems[-5]) == '2' :
-					print line, '\t\t({0:.2f}% among all remotes traffic'.format(float(elems[-1]) / float(remote_accesses) *100), ', {0:.2f}% among all 2hop traffic'.format(float(elems[-1]) / float(twohop_remote_accesses)*100),')'
 		
 		max_key =  max(dict_map.iteritems(), key=operator.itemgetter(1))[0] 
 		local_accesses_ratio = float(local_accesses) / float(local_accesses + remote_accesses) * 100
 		remote_accesses_ratio = float(remote_accesses) / float(local_accesses + remote_accesses) * 100
-		print 'most remotely accessed node : ', max_key , int(dict_map[max_key]) , ' ( {0:.2f}% among all remote accesses)'.format(dict_map_percentage[max_key]), ' (total local accesses ratio : {0:.2f}%'.format(local_accesses_ratio), ', total remote accesses ratio : {0:.2f}%)'.format(remote_accesses_ratio)
+		print 'most remotely accessed node : ', max_key , int(dict_map[max_key]) , ' ( {0:.2f}% among all remote accesses )'.format(dict_map_percentage[max_key]), ' ( total local accesses ratio : {0:.2f}%'.format(local_accesses_ratio), ', total remote accesses ratio : {0:.2f}% )'.format(remote_accesses_ratio)
 
 			
 

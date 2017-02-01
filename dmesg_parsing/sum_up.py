@@ -34,18 +34,28 @@ def sum_up(filepath,arg):
 				temp2 = " " + str(sum)
 				array.append(temp1 + temp2)
 				sum = 0
-		max_val = 0
-		max_idx = 0
 		if int(arg) == 1 :
 			for line in array:
 				print line
+# 1 hop
+		max_val = 0
+		max_idx = 0
 		for idx,line in enumerate(array):
 			elems = line.split()
-			if max_val < int(elems[-1]):
+			if (str(elems[-5]) == '1') and (max_val < int(elems[-1])):
 				max_val = int(elems[-1])
 				max_idx = idx
-
-		print array[max_idx]
+		print "1 hop max --> " + array[max_idx]
+			
+# 2 hop
+		max_val = 0
+		max_idx = 0
+		for idx,line in enumerate(array):
+			elems = line.split()
+			if (str(elems[-5]) == '2') and (max_val < int(elems[-1])):
+				max_val = int(elems[-1])
+				max_idx = idx
+		print "2 hop max --> " + array[max_idx]
 
 
 

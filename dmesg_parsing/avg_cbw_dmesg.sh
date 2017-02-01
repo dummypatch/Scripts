@@ -12,8 +12,8 @@ CUR_FILE=$1
 if [ -f ./${CUR_FILE} ] ; then
 	~/Scripts/dmesg_parsing/extract_dmesg_log.sh ./${CUR_FILE}
 	#~/Scripts/dmesg_parsing//dmesg_parse_0145.sh ./${CUR_FILE} > ${TEMP_FILE}
-	~/Scripts/dmesg_parsing//dmesg_parse_0167.sh ./${CUR_FILE} > ${TEMP_FILE}
-	python ~/Scripts/dmesg_parsing/dict_sum_up.py ${TEMP_FILE} 1
+	~/Scripts/dmesg_parsing//dmesg_parse_0167_cbw.sh ./${CUR_FILE} > ${TEMP_FILE}
+	python ~/Scripts/dmesg_parsing/avg_cbw_dmesg_core.py ${TEMP_FILE} 1
 else
 	echo "[error] ${CUR_FILE} not exist"
 fi
