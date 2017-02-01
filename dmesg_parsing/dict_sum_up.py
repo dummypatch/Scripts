@@ -27,6 +27,7 @@ def sum_up(filepath,arg):
 			# valid data line => 10 elements
 			# break point => 0 elements
 			# headers => no pattern
+			temp1 = ""
 			if len(elems) == 10 or len(elems) == 11 :		# sometimes the length is 11 
 			# print index
 				if sum == 0:
