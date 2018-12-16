@@ -1,0 +1,153 @@
+#!/bin/bash
+#/usr/bin/python
+
+NR_NODE=8
+NR_SRC_NODE=${NR_NODE}
+NR_DEST_NODE=${NR_NODE}
+
+# idx for node ID
+NODE_REG=(
+	"00:18"
+	"00:19"
+	"00:1A"
+	"00:1B"
+	"00:1C"
+	"00:1D"
+	"00:1E"
+	"00:1F"
+)
+
+# idx for destination node ID 
+ROUTING_REG=(	 
+	"0x40"
+	"0x44"
+	"0x48"
+	"0x4C"
+	"0x50"
+	"0x54"
+	"0x58"
+	"0x5C"
+)
+
+FUNC_0="0"
+FUNC_1="1"
+FUNC_2="2"
+FUNC_3="3"
+FUNC_4="4"
+FUNC_5="5"
+ORIGINAL_ROUTING_TABLE_NODE_0=(
+	"046c0201"
+	"00041008"
+	"00240402"
+	"00040402"
+	"00042010"
+	"00042010"
+	"00260100"
+	"00060100"
+)
+ORIGINAL_ROUTING_TABLE_NODE_1=(
+	"00040804"
+	"00dc0201"
+	"00042010"
+	"00142010"
+	"00044020"
+	"00044020"
+	"00040402"
+	"00140402"
+)
+ORIGINAL_ROUTING_TABLE_NODE_2=(
+	"00240804"
+	"00040804"
+	"057c0201"
+	"05041008"
+	"00042010"
+	"00040402"
+	"00248040"
+	"00260100"
+)
+
+ORIGINAL_ROUTING_TABLE_NODE_3=(
+	"00040402"
+	"00140402"
+	"00040804"
+	"00dc0201"
+	"00044020"
+	"00042010"
+	"00040804"
+	"00040804"
+)
+ORIGINAL_ROUTING_TABLE_NODE_4=(
+	"00240804"
+	"00260100"
+	"00042010"
+	"00048040"
+	"057c0201"
+	"04141008"
+	"00240402"
+	"00040402"
+)
+ORIGINAL_ROUTING_TABLE_NODE_5=(
+	"00040804"
+	"00040804"
+	"00042010"
+	"00044020"
+	"00040804"
+	"00dc0201"
+	"00040402"
+	"00140402"
+)
+ORIGINAL_ROUTING_TABLE_NODE_6=(
+	"00240402"
+	"00040402"
+	"00060100"
+	"00060100"
+	"00242010"
+	"00042010"
+	"046c0201"
+	"00041008"
+)
+ORIGINAL_ROUTING_TABLE_NODE_7=(
+	"00040402"
+	"00140402"
+	"00042010"
+	"00042010"
+	"00044020"
+	"00144020"
+	"00040804"
+	"00dc0201"
+)
+
+declare -A ROUTING_TABLE
+
+for (( jj=0;jj<${NR_DEST_NODE};jj++))
+do
+	ROUTING_TABLE[0,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_0[${jj}]}
+	ROUTING_TABLE[1,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_1[${jj}]}
+	ROUTING_TABLE[2,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_2[${jj}]}
+	ROUTING_TABLE[3,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_3[${jj}]}
+	ROUTING_TABLE[4,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_4[${jj}]}
+	ROUTING_TABLE[5,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_5[${jj}]}
+	ROUTING_TABLE[6,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_6[${jj}]}
+	ROUTING_TABLE[7,${jj}]=${ORIGINAL_ROUTING_TABLE_NODE_7[${jj}]}
+done
+
+
+FLAG=0
+for ((ii=0;ii<${NR_NODE};ii++))
+do
+	for ((jj=0;jj<${NR_NODE};jj++))
+	do
+		CUR_ENTRY=`~/Scripts/setpci -s "${NODE_REG[${ii}]}.${FUNC_0}" ${ROUTING_REG[${jj}]}.L`
+		ORIG_ENTRY=${ROUTING_TABLE[${ii},${jj}]}
+		if [  "$CUR_ENTRY" != "$ORIG_ENTRY" ];then
+			echo "Node ${ii} , Entry ${jj} different (Cur : $CUR_ENTRY, Orig : $ORIG_ENTRY)"
+			FLAG=$((${FLAG}+1))
+		fi
+	done
+done
+if [ ${FLAG} -eq 0 ];then
+	echo "is_modified:0";
+else
+	echo "is_modified:1";
+fi
+
