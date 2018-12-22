@@ -65,49 +65,30 @@ TRIALS=(
 
 SCRIPT_ROOT="/home/${USER}/Scripts/"
 #for((ii=0;ii<${#TRIALS[*]};ii++))
-for((ii=0;ii<15;ii++))
+for((ii=0;ii<10;ii++))
+#for((ii=15;ii<25;ii++))
 #for((ii=0;ii<10;ii++))
 do
 	CUR_TRIAL=${TRIALS[${ii}]}
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_streamcluster_${ii}_trial_on_7.log"
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_fluidanimate_${ii}_trial_on_7.log"
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_canneal_${ii}_trial_on_7.log"
 
-	#CUR_FILE="0167_alternative_16threads_PARSEC_bal_streamcluster_${ii}_trial_on_7.log"
-	#CUR_FILE="0167_alternative_16threads_PARSEC_bal_fluidanimate_${ii}_trial_on_7.log"
-	#CUR_FILE="0167_alternative_16threads_PARSEC_bal_canneal_${ii}_trial_on_7.log"
-
-	#CUR_FILE="FaceRec_FaceRec_0167_4node_default_ALP_${ii}_trial_on_7.log"
-	#CUR_FILE="PCA_PCA_0167_4node_default_ALP_${ii}_trial_on_7.log"
-	#CUR_FILE="LDA_LDA_0167_4node_default_ALP_${ii}_trial_on_7.log"
-
-	#CUR_FILE="FaceRec_FaceRec_0167_4node_alternative_ALP_${ii}_trial_on_7.log"
-	#CUR_FILE="PCA_PCA_0167_4node_alternative_ALP_${ii}_trial_on_7.log"
-	#CUR_FILE="LDA_LDA_0167_4node_alternative_ALP_${ii}_trial_on_7.log"
-
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_streamcluster_${ii}_trial_on_6.log"
-	#CUR_FILE="FaceRec_FaceRec_0167_4node_default_ALP_${ii}_trial_on_0.log"
-	#CUR_FILE="0145_default_16threads_PARSEC_bal_streamcluster_${ii}_trial_on_0.log"
-
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_alternative_1_streamcluster_${ii}_trial_on_7.log"
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_alternative_2_streamcluster_${ii}_trial_on_7.log"
-	#CUR_FILE="FaceRec_FaceRec_0167_4node_default_ALP_${ii}_trial_on_7.log"
-	#CUR_FILE="PCA_PCA_0167_4node_default_ALP_${ii}_trial_on_7.log"
-	#CUR_FILE="LDA_LDA_0167_4node_default_ALP_${ii}_trial_on_7.log"
-
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_streamcluster_${ii}_trial_on_7.log"
-
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal_alternative_2_streamcluster_${ii}_trial_on_0.log"
-
-	#CUR_FILE="0167_default_16threads_PARSEC_bal_streamcluster_${ii}_trial_on_6.log"
-	#CUR_FILE="0167_alternative_16threads_PARSEC_bal_streamcluster_0_trial_on_6.log"
-	#CUR_FILE="0167_default_16threads_PARSEC_no_bal__streamcluster_${ii}_trial_on_6.log"
-
-	CUR_FILE="0167_default_16threads_PARSEC_no_bal_default_streamcluster_${ii}_trial_on_1.log"
-
-
-
-
+	# ASPLOS 2019
+	#CUR_FILE="FaceRec_FaceRec_0167_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="PCA_PCA_0167_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="LDA_LDA_0167_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="FaceRec_FaceRec_0145_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="PCA_PCA_0145_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="LDA_LDA_0145_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="4node_wonjun_0167_parsec_no_dyn_streamcluster_${ii}_trial.log"
+	#CUR_FILE="0167_default_16threads_PARSEC_NEW_streamcluster_${ii}_trial_on_0.log"
+	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_streamcluster_${ii}_trial_on_0.log"
+	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_on_r1_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_on_sort_bw_streamcluster_${ii}_trial_on_7.log"
+	CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_7.log"
+	
+	
 
 	if [ -f ./${CUR_FILE} ] ;then
 		printf "%s :\t" $CUR_FILE

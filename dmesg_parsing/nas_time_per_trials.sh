@@ -65,18 +65,20 @@ TRIALS=(
 )
 
 #for((ii=0;ii<${#TRIALS[*]};ii++))
-for((ii=0;ii<20;ii++))
+for((ii=0;ii<15;ii++))
 do
 	CUR_TRIAL=${TRIALS[${ii}]}
 	#CUR_FILE="0167_default_16threads_nas_bal_ft.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_default_16threads_nas_bal_lu.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_default_16threads_nas_bal_cg.C.16_${ii}_trial_on_6.log"
-	#CUR_FILE="0167_default_16threads_nas_bal_is.C.16_${ii}_trial_on_7.log"
+	CUR_FILE="0167_default_16threads_nas_nobal_is.C.16_${ii}_trial_on_7.log"
 
 	#CUR_FILE="0167_alternative_16threads_nas_bal_ft.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_alternative_16threads_nas_bal_lu.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_alternative_16threads_nas_bal_cg.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_alternative_16threads_nas_bal_is.C.16_${ii}_trial_on_7.log"
+	#CUR_FILE="0167_default_16threads_nas_nobal_is.C.16_${ii}_trial_on_7.log"
+
 
 
 	if [ -f ./${CUR_FILE} ] ;then

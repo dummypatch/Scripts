@@ -27,7 +27,7 @@ def sum_up(filepath,arg):
 			# valid data line => 10 elements
 			# break point => 0 elements
 			# headers => no pattern
-			temp1 = ""
+			#temp1 = ""
 			if len(elems) == 10 or len(elems) == 11 :		# sometimes the length is 11 
 			# print index
 				if sum == 0:
@@ -84,6 +84,6 @@ def sum_up(filepath,arg):
 
 if __name__ == "__main__":
 	if len(sys.argv) == 2 :
-		sum_up(sys.argv[1], 0 )
+		sum_up(sys.argv[1], 0 )		
 	elif len(sys.argv) == 3 :
 		sum_up(sys.argv[1], sys.argv[2])
