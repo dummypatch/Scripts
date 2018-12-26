@@ -86,7 +86,8 @@ do
 	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_streamcluster_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_on_r1_streamcluster_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_on_sort_bw_streamcluster_${ii}_trial_on_7.log"
-	CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_0.log"
+	CUR_FILE="0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_7.log"
 	
 	
 

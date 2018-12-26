@@ -9,7 +9,8 @@ for ((ii=0;ii<10;ii++))
 #for ((ii=0;ii<10;ii++))
 do
 	# ATC 2019
-	CUR_FILE="dmesg_output_0167_default_16threads_PARSEC_on_01234567_2_streamcluster_${ii}_trial_on_0.log"
+	CUR_FILE="dmesg_output_0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="dmesg_output_0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_0.log"
 	# ASPLOS 2019 
 	#CUR_FILE="dmesg_output_0167_default_16threads_PARSEC_streamcluster_${ii}_trial_on_0.log"
 	#CUR_FILE="dmesg_output_0167_default_16threads_PARSEC_bal_streamcluster_${ii}_trial_on_6.log"
