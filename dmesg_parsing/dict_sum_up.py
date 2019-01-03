@@ -45,14 +45,27 @@ def sum_up(filepath,arg):
 		remote_accesses = 0
 		local_accesses = 0
 		twohop_remote_accesses = 0
+		# /****************************************************************************
+		#  ['LOCAL', 'hop', 'path', 'src(0)->dest(0)', '1605152046']
+		#	-5		 -4		  -3			-2				-1
+		#****************************************************************************/ 
 		for idx,line in enumerate(array):
 			elems = line.split()
 			if (str(elems[-5]) == '1') or (str(elems[-5]) == '2') :
 				dest = str(elems[-2])
 				if dest.split('->')[1] in dict_map.keys():
-					dict_map[dest.split('->')[1]] += int(elems[-1])
+					#/****************************************************************************
+					# [0]  의 경우 src node 로 카운트값을 매핑하는것이고
+					# [1] 의 경우는 dest node 로 카운트 값을 매핑하는것
+					# monitor_dram_cbw_v2.c  에서 cpu_dram_req[src][dest] 를 cpu_dram_req[dest][src]
+					# 으로 바꾸었기때문에 [0] 을 사용하게되었다.  src node 에서 다른 노드로
+					# 전달되는 트래픽의 양을 추측하기위한 방법 2018.12.29 17:12:49 
+					#****************************************************************************/ 
+					dict_map[dest.split('->')[0]] += int(elems[-1])		#2018.12.29 17:10:21 
+					#dict_map[dest.split('->')[1]] += int(elems[-1])	2018.12.29 17:10:14 
 				else:
-					dict_map[dest.split('->')[1]] = int(elems[-1])
+					dict_map[dest.split('->')[0]] = int(elems[-1])		# 2018.12.29 17:10:43 
+					#dict_map[dest.split('->')[1]] = int(elems[-1])		2018.12.29 17:10:29 
 				remote_accesses += int(elems[-1])
 				if str(elems[-5]) == '2' :
 					twohop_remote_accesses +=  int(elems[-1])
