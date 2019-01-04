@@ -8,10 +8,11 @@ for ((ii=0;ii<10;ii++))
 #for ((ii=15;ii<25;ii++))
 #for ((ii=0;ii<10;ii++))
 do
-	# ATC 2019
-	CUR_FILE="dmesg_output_0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_7.log"
-	#CUR_FILE="dmesg_output_0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_0.log"
-	# ASPLOS 2019 
+	## ATC 2019
+	CUR_FILE="dmesg_output_nobal__two_hop_percent_first_and_new_algo_3_update_30m_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="dmesg_output_0167_16threads_PARSEC_abstract_monitor_two_hop_percent_first_and_new_algo_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="dmesg_output_0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_7.log"
+	## ASPLOS 2019 
 	#CUR_FILE="dmesg_output_0167_default_16threads_PARSEC_streamcluster_${ii}_trial_on_0.log"
 	#CUR_FILE="dmesg_output_0167_default_16threads_PARSEC_bal_streamcluster_${ii}_trial_on_6.log"
 	#CUR_FILE="dmesg_output_LDA_0167_4node_default_ALP_${ii}_trial_on_7.log"
