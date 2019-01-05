@@ -88,7 +88,8 @@ do
 	#CUR_FILE="0167_default_16threads_PARSEC_on_0167_abstract_monitor_test_on_sort_bw_streamcluster_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_0.log"
 	#CUR_FILE="0167_16threads_PARSEC_abstract_monitor_two_hop_percent_first_and_new_algo_3_streamcluster_${ii}_trial_on_7.log"
-	CUR_FILE="nobal__two_hop_percent_first_and_new_algo_3_update_30m_streamcluster_${ii}_trial_on_7.log"
+	#CUR_FILE="nobal__two_hop_percent_first_and_new_algo_3_update_30m_streamcluster_${ii}_trial_on_7.log"
+	CUR_FILE="nobal_2hop_bw_measureing_with_dynamic_streamcluster_${ii}_trial_on_0.log"
 
 	
 	
