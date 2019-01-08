@@ -27,7 +27,7 @@ do
 	do
 		for (( dest_idx=0; dest_idx < ${#LIST_NODE_ID[*]} ; dest_idx++))
 		do
-			ALT_PATH=`echo "src(${LIST_NODE_ID[${src_idx}]})->after_mid(${LIST_NODE_ID[${mid_idx}]})->dest(${LIST_NODE_ID[${dest_idx}]})"`
+			ALT_PATH=`echo "src(${LIST_NODE_ID[${src_idx}]})->after_mid(${LIST_NODE_ID[${mid_idx}]})->dest(${LIST_NODE_ID[${dest_idx}]}).*after.*"`
 			#echo ${ALT_PATH}
 			COUNT=0
 			COUNT=`cat ${FILENAME} |grep ${ALT_PATH}|wc -l`

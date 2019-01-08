@@ -22,7 +22,7 @@ do
 		#CUR_FILE="dmesg_output_0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_0.log"
 		#CUR_FILE="dmesg_output_nobal__two_hop_percent_first_and_new_algo_3_update_altr_2_streamcluster_${ii}_trial_on_0.log"
 		#CUR_FILE="dmesg_output_nobal__two_hop_percent_first_and_new_algo_3_update_altr_3_streamcluster_${ii}_trial_on_0.log"
-		CUR_FILE="dmesg_output_nobal__two_hop_percent_first_and_new_algo_3_update_altr_3_streamcluster_${ii}_trial_on_7.log"
+		CUR_FILE="dmesg_output_parsec_streamcluster_dyn_1decision_streamcluster_${ii}_trial.log"
 
 		if [ -f ./${CUR_FILE} ] ; then
 			printf "%s :\t" $CUR_FILE

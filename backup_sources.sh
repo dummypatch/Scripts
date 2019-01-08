@@ -20,5 +20,6 @@ function backup_sources {
 	cp ${SRC_DIR}/clustering.c  ${TARGET_DIR}
 	cp ${SRC_DIR}/my_config.h	${TARGET_DIR}
 	cp ${SRC_DIR}/cluster_config.h	${TARGET_DIR}
+	cp ${SRC_DIR}/Makefile 	${TARGET_DIR}
 
 }
