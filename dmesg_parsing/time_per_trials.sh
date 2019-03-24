@@ -65,7 +65,7 @@ TRIALS=(
 
 SCRIPT_ROOT="/home/${USER}/Scripts/"
 #for((ii=0;ii<${#TRIALS[*]};ii++))
-for((ii=0;ii<10;ii++))
+for((ii=0;ii<5;ii++))
 #for((ii=15;ii<25;ii++))
 #for((ii=0;ii<10;ii++))
 do
@@ -89,8 +89,20 @@ do
 	#CUR_FILE="0167_16threads_PARSEC_abstract_monitor_test_on_sort_bw_first_one_decision_DBW_FIRST_streamcluster_${ii}_trial_on_0.log"
 	#CUR_FILE="0167_16threads_PARSEC_abstract_monitor_two_hop_percent_first_and_new_algo_3_streamcluster_${ii}_trial_on_7.log"
 	#CUR_FILE="parsec_streamcluster_nodyn_streamcluster_${ii}_trial.log"
-	CUR_FILE="parsec_streamcluster_dyn_4decision_percent_diff_1_alternative_diff_10_sharer_first_3_cmp_algo_5_200ms_update_decision_streamcluster_${ii}_trial_on_6.log"
+	#CUR_FILE="FaceRec_FaceRec_0167_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="LDA_LDA_0167_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="FaceRec_FaceRec_0123_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="LDA_LDA_0123_4node_default_ALP_${ii}_trial.log"
+	#CUR_FILE="FaceRec_FaceRec_0123_4node_default_ALP_${ii}_trial_on_2.log"
+	#CUR_FILE="PCA_PCA_0123_4node_default_ALP_${ii}_trial_on_1.log"
+	#CUR_FILE="parsec_5nodes_dynamic_streamcluster_${ii}_trial.log"
+	#CUR_FILE="parsec_8nodes_streamcluster_${ii}_trial.log"
 	#CUR_FILE="parsec_streamcluster_dyn_streamcluster_${ii}_trial.log"
+
+# Above are ATC 2019
+	CUR_FILE="parsec_0145_dynamic_canneal_${ii}_trial_on_5.log"
+
+
 
 	
 	
