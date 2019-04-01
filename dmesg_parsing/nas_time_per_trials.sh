@@ -65,13 +65,44 @@ TRIALS=(
 )
 
 #for((ii=0;ii<${#TRIALS[*]};ii++))
-for((ii=0;ii<15;ii++))
+for((ii=0;ii<10;ii++))
 do
 	CUR_TRIAL=${TRIALS[${ii}]}
 	#CUR_FILE="0167_default_16threads_nas_bal_ft.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_default_16threads_nas_bal_lu.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_default_16threads_nas_bal_cg.C.16_${ii}_trial_on_6.log"
-	CUR_FILE="0167_default_16threads_nas_nobal_is.C.16_${ii}_trial_on_7.log"
+	#CUR_FILE="0167_default_16threads_nas_nobal_is.C.16_${ii}_trial_on_7.log"
+
+	#CUR_FILE="NAS_0123_mg.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_sp.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_bt.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_lu.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_cg.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_is.C.16_${ii}_trial_on_3.log"
+
+	#CUR_FILE="NAS_0123_dynamic_mg.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_dynamic_sp.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_dynamic_bt.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_dynamic_lu.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_dynamic_cg.C.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_0123_dynamic_is.C.16_${ii}_trial_on_3.log"
+
+	#CUR_FILE="NAS_OMP_0123_dynamic_mg.C.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_sp.C.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_bt.C.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_lu.C.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_cg.C.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_add_bt.B.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_add_is.D.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_add_lu.B.x_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_OMP_0123_dynamic_add_sp.A.x_${ii}_trial_on_3.log"
+
+	#CUR_FILE="NAS_MPI_0123_dynamic_add_bt.B.16_${ii}_trial_on_0.log"
+	#CUR_FILE="NAS_MPI_0123_dynamic_add_is.D.16_${ii}_trial_on_3.log"
+	#CUR_FILE="NAS_MPI_0123_dynamic_add_lu.B.16_${ii}_trial_on_3.log"
+	CUR_FILE="NAS_MPI_0123_dynamic_add_sp.A.16_${ii}_trial_on_0.log"
+
+
 
 	#CUR_FILE="0167_alternative_16threads_nas_bal_ft.C.16_${ii}_trial_on_7.log"
 	#CUR_FILE="0167_alternative_16threads_nas_bal_lu.C.16_${ii}_trial_on_7.log"

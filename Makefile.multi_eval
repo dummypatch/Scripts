@@ -1,0 +1,20 @@
+#
+# Copyright (c) DEOK-JAE OH
+# All rights reserved.
+#
+#    written by Deok-Jae Oh
+#
+TARGET = multi_eval
+
+OBJS = multi_eval.o
+
+#CFLAGS = -std=c99 -g -Wall -Wextra -Wsign-conversion -Winline -Wno-unused-function -Wconversion -O0 -DAMD_CONFIG	# WONJUN
+CFLAGS = -std=gnu99    -g -Wall -Wextra -Wsign-conversion -Winline -Wno-unused-function -Wconversion -O0 # WONJUN
+#LDFLAGS = -lpthread -lrt -lm -lnuma 	#WONJUN
+LDFLAGS = -lpthread -lrt  -lm #WONJUN
+
+$(TARGET): $(OBJS)
+	g++  $(OBJS) $(CFLAGS) -o $(TARGET) $(LDFLAGS)
+
+clean:
+	rm  -rf $(OBJS) $(TARGET)

@@ -65,7 +65,7 @@ TRIALS=(
 
 SCRIPT_ROOT="/home/${USER}/Scripts/"
 #for((ii=0;ii<${#TRIALS[*]};ii++))
-for((ii=0;ii<5;ii++))
+for((ii=0;ii<8;ii++))
 #for((ii=15;ii<25;ii++))
 #for((ii=0;ii<10;ii++))
 do
@@ -100,7 +100,24 @@ do
 	#CUR_FILE="parsec_streamcluster_dyn_streamcluster_${ii}_trial.log"
 
 # Above are ATC 2019
-	CUR_FILE="parsec_0145_dynamic_canneal_${ii}_trial_on_5.log"
+	#CUR_FILE="FaceRec_FaceRec_0123_4node_default_ALP_${ii}_trial_on_3.log"
+	#CUR_FILE="PCA_PCA_0123_4node_default_ALP_${ii}_trial_on_3.log"
+	#CUR_FILE="LDA_LDA_0123_4node_default_ALP_${ii}_trial_3.log"
+	#CUR_FILE="parsec_0145_canneal_${ii}_trial_on_4.log"
+	#CUR_FILE="FaceRec_FaceRec_0145_4node_default_ALP_${ii}_trial_on_5.log"
+	#CUR_FILE="LDA_LDA_0145_4node_default_ALP_${ii}_trial_on_5.log"
+	#CUR_FILE="PCA_PCA_0145_4node_default_ALP_${ii}_trial_on_5.log"
+
+
+	#CUR_FILE="parsec_8nodes_streamcluster_${ii}_trial.log"
+	#CUR_FILE="parsec_8nodes_dynamic_streamcluster_${ii}_trial.log"
+
+
+	#CUR_FILE="parsec_8nodes_canneal_${ii}_trial.log"
+	CUR_FILE="parsec_8nodes_dynamic_canneal_${ii}_trial.log"
+
+
+
 
 
 
